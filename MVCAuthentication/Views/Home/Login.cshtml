@@ -1,0 +1,33 @@
+﻿@model Employee
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@if (ViewBag.Message != null)
+{
+    <h2 style="color:red"> @ViewBag.Message  </h2>
+
+}
+
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <div>
+        Kullanıcı ismi giriniz
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form form-control" })
+    </div>
+
+    <div>
+        Soyisim giriniz
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.LastName,new {@class="form form-control" })
+    </div>
+    <div>
+        <button class="btn btn-primary">Giriş Yap</button>
+    </div>
+}
